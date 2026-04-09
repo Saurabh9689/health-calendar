@@ -4,21 +4,32 @@ body {
   color: white;
   text-align: center;
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Title */
 h1 {
-  font-size: 30px;
-  margin: 25px 0;
-  letter-spacing: 1px;
+  font-size: 22px;
+  margin: 15px 0 5px;
+  font-weight: 600;
 }
 
-/* Grid layout */
+/* Subtitle */
+.subtitle {
+  opacity: 0.7;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 30px;
+  gap: 15px;
+  padding: 20px;
+  flex-grow: 1;
 }
 
 /* Tablet */
@@ -32,41 +43,46 @@ h1 {
 @media (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
+    padding: 15px;
   }
 }
 
-/* Card (Glass UI) */
+/* Card */
 .card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
   border-radius: 18px;
-  padding: 18px;
+  padding: 16px;
   cursor: pointer;
   text-align: left;
-  min-height: 140px;
+  min-height: 130px;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.1);
-  animation: fadeIn 0.6s ease forwards;
+  border: 1px solid rgba(255,255,255,0.15);
+  animation: fadeIn 0.5s ease forwards;
 }
 
-/* Hover effect */
+/* Hover */
 .card:hover {
   transform: translateY(-8px) scale(1.02);
   background: rgba(255,255,255,0.08);
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* Month title */
-.card h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #38bdf8;
+/* Click effect */
+.card:active {
+  transform: scale(0.97);
 }
 
 /* Text */
+.card h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #38bdf8;
+}
+
 .card p {
   font-size: 13px;
-  margin: 4px 0;
+  margin: 3px 0;
 }
 
 /* Animation */
@@ -79,4 +95,19 @@ h1 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* CTA */
+.cta {
+  padding: 20px;
+}
+
+.cta button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #38bdf8;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
 }
